@@ -1,1 +1,0 @@
-# lolanakbar.github.io
