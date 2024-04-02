@@ -1,17 +1,20 @@
 <?php
 
-// **WARNING: Insecure way to store data!**
-$email = $_POST['email'];
-$message = $_POST['message'];
+// Replace with secure storage (database or encrypted file)
+$email = $_GET['email'];
+$email_file = "emails.txt";
 
-$data = $email . "\n" . $message . "\n\n"; // Separate emails with line breaks
+// Basic check for duplicate email (improve for production)
+$existing_emails = file_get_contents($email_file);
+if (strpos($existing_emails, $email) !== false) {
+  echo "Email already exists!";
+  exit;
+}
 
-$filename = "emails.txt"; // This file needs server-side write permissions
+$file = fopen($email_file, "a"); // Open for appending
+fwrite($file, $email . "\n"); // Add email with newline character
+fclose($file);
 
-// **WARNING: Insecure way to write data!**
-// **Additional Note:** Never store passwords or other sensitive data in plain text.
-file_put_contents($filename, $data, FILE_APPEND); // Append data to the file
-
-echo "Email sent successfully (Insecure Example)"; // Confirmation message
+echo "Email submitted successfully!";
 
 ?>
