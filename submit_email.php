@@ -1,7 +1,7 @@
 <?php
 
-// Replace with actual logic to securely store emails (e.g., database)
-$email = $_POST['email'];
+// Replace with secure storage (database or encrypted file)
+$email = $_GET['email'];
 $email_file = "emails.txt";
 
 // Basic check for duplicate email (improve for production)
@@ -12,7 +12,7 @@ if (strpos($existing_emails, $email) !== false) {
 }
 
 $file = fopen($email_file, "a"); // Open for appending
-fwrite($file, $email . "\n"); // Add email with newline
+fwrite($file, $email . "\n"); // Add email with newline character
 fclose($file);
 
 echo "Email submitted successfully!";
