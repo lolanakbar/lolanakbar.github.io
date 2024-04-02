@@ -2,7 +2,7 @@
 document.getElementById('email-form').addEventListener('submit', function(event) {
   event.preventDefault();
   const email = document.getElementById('email').value;
-  fetch('submit_email.php?email=' + email)
+  fetch('submit_email.py?email=' + email)
     .then(response => response.text())
     .then(data => {
       document.getElementById('message').textContent = data;
