@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bigg Boss</title>
-  <style>
-    /* Hide channel name */
-.twitch-channel-name {
-    display: none !important;
-}
-
-/* Hide Twitch logo */
-.twitch-logo {
-    display: none !important;
-}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Twitch Stream</title>
+    <style>
+        /* Hide Twitch logo and channel name */
+        .tw-flex.tw-justify-content-center.tw-align-items-center.tw-font-size-6.tw-pd-r-1.tw-pd-x-2.tw-pd-y-1.tw-overflow-hidden.tw-relative {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
-
-  <div>
-<iframe src="https://player.twitch.tv/?channel=tamilbulbtv56&parent=lolanakbar.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
-    </div>
-  </body>
+    <!-- Embedded Twitch stream -->
+    <iframe
+        src="https://player.twitch.tv/?channel=tamilbulbtv56&parent=lolanakbar.github.io"
+        height="720"
+        width="1280"
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen="true">
+    </iframe>
+</body>
 </html>
